@@ -14,6 +14,9 @@ load_dotenv()
 
 app = FastAPI()
 
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
 FERREMAS_API_URL = os.getenv("FERREMAS_API_URL")
 FERREMAS_TOKEN = os.getenv("FERREMAS_TOKEN")
 SECRET_KEY = os.getenv("SECRET_KEY")
