@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI, Depends, HTTPException, status, Query
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
@@ -9,6 +10,7 @@ import os
 import json
 from auth import create_access_token, verify_password
 from users import fake_users_db
+
 
 load_dotenv()
 
