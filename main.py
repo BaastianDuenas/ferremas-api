@@ -124,11 +124,11 @@ async def get_sucursales_con_vendedores(user: dict = Depends(get_current_user)):
         vendedores = vendedores_resp.json()
         return [
             {
-                "id_sucursal": s["id"],
-                "localidad": s["localidad"],
-                "id_vendedor": v["id"],
-                "nombre": v["nombre"],
-                "email": v["email"]
+                "id_sucursal": s.get("id"),
+                "localidad": s.get("localidad"),
+                "id_vendedor": v.get("id"),
+                "nombre": v.get("nombre"),
+                "email": v.get("email")
             }
             for v in vendedores
             for s in sucursales
